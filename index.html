@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Corazón Late por Ti ❤️</title>
+
+    <style>
+        /* Estilos Generales y Comportamiento de Scroll Suave */
+        html {
+            scroll-behavior: smooth; /* Habilita la transición suave del scroll */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Rosa pastel suave */
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- Contenedor Inicial (donde está el botón) --- */
+        .seccion-boton {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Estilo del Botón */
+        .boton-amor {
+            background-color: #e91e63; /* Rosa fuerte */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .boton-amor:hover {
+            background-color: #c2185b; /* Tono más oscuro al pasar el ratón */
+            transform: scale(1.05);
+        }
+
+        /* --- Seccion del Corazon (después de la transicion) --- */
+        .seccion-corazon {
+            height: 100vh; /* Para asegurar que el scroll sea notable */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #ffebee; /* Rosa muy pálido */
+        }
+
+        .texto-amor {
+            color: #e91e63;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        /* Estilo y Animación del Corazón */
+        .corazon {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #e91e63;
+            /* Inicia la animación de latido */
+            animation: latido 1.2s infinite ease-in-out; 
+        }
+
+        /* Crea la forma de corazón con pseudoelementos */
+        .corazon::before,
+        .corazon::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: #e91e63;
+            border-radius: 50%;
+        }
+
+        /* Posiciona los círculos para formar la parte superior del corazón */
+        .corazon::before {
+            top: -75px;
+            left: 0;
+        }
+
+        .corazon::after {
+            top: 0;
+            left: 75px;
+        }
+
+        /* Rota el cuadrado base para formar la punta inferior del corazón */
+        .corazon {
+            transform: rotate(-45deg); 
+        }
+        
+        /* Definición de la Animación de Latido */
+        @keyframes latido {
+            0% { transform: rotate(-45deg) scale(1); }
+            50% { transform: rotate(-45deg) scale(1.15); } /* El corazón se agranda */
+            100% { transform: rotate(-45deg) scale(1); }
+        }
+
+        /* Script para la función del botón (usando HTML puro) */
+        /* La transición se logra con el atributo href="#ID" y scroll-behavior: smooth */
+
+    </style>
+</head>
+<body>
+
+    <div class="seccion-boton">
+        <a href="#corazon-latido" class="boton-amor">
+            OPRIME AQUÍ AMOR 💖
+        </a>
+    </div>
+
+    <div id="corazon-latido" class="seccion-corazon">
+        <div class="texto-amor">¡Siempre en mi corazón!</div>
+        <div class="corazon"></div>
+    </div>
+
+</body>
+</html>
